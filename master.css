@@ -1,0 +1,216 @@
+@import url("https://fonts.cdnfonts.com/css/trench");
+@import url("https://fonts.cdnfonts.com/css/space-explorer");
+/*
+fonts use :
+    tench : font-family: 'Trench', sans-serif; 
+    space exploration : font-family: 'SPACE EXPLORER', sans-serif;
+*/
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  position: relative;
+  min-height: 100vh;
+  background-color: black;
+  color: white;
+}
+.container header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 2rem;
+  font-size: 1.5em;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.767);
+}
+.container header h1 {
+  font-family: "Trench", sans-serif;
+  font-size: 2.5em;
+}
+.container header .burger-menu-icon {
+  cursor: pointer;
+}
+.container header .burger-menu-icon span {
+  width: 2rem;
+  height: 3px;
+  background-color: white;
+  display: block;
+  border-radius: 5px;
+  transition: 0.5s ease-in-out;
+}
+.container header .burger-menu-icon span:nth-child(2) {
+  margin: 5px 0px;
+}
+.container header .burger-menu-icon-open span:nth-child(1) {
+  transform: rotate(45deg);
+}
+.container header .burger-menu-icon-open span:nth-child(2) {
+  transform: rotate(-45deg);
+  margin: -3px 0px;
+}
+.container header .burger-menu-icon-open span:nth-child(3) {
+  opacity: 0;
+}
+.container nav {
+  display: block;
+  position: fixed;
+  width: 0%;
+  overflow: hidden;
+  background-color: rgb(0, 0, 0);
+  height: 100vh;
+  padding: 5rem 0rem;
+  z-index: 1000;
+  transition: 0.5s ease-in-out;
+}
+.container nav li {
+  margin: 5rem 0;
+  padding: 0.5rem;
+  list-style-type: none;
+  font-size: 2em;
+}
+.container nav li:hover {
+  background-color: rgba(128, 128, 128, 0.571);
+}
+.container nav li a {
+  font-family: "Trench", sans-serif;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.container .nav-bar-open {
+  width: 25%;
+}
+.container .body section.main {
+  position: relative;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+.container .body section.main h1 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-family: "Trench", sans-serif;
+  text-transform: uppercase;
+  font-size: 4rem;
+  z-index: 1;
+}
+.container .body section.main video {
+  width: 100%;
+  z-index: -1;
+  height: 100vh;
+}
+.container .body section.main .arrow-down {
+  text-decoration: none;
+  color: white;
+  position: absolute;
+  left: 50%;
+  top: 90%;
+  transform: translate(-50%, 0%);
+  font-size: 2em;
+  animation-name: arrow-down;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+.container .body section.gallery {
+  position: relative;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  text-align: center;
+  align-items: center;
+  justify-items: center;
+  font-family: "Trench", sans-serif;
+  font-size: 1.3em;
+}
+.container .body section.gallery video {
+  width: 100%;
+}
+.container .body section.gallery .layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to right, rgba(128, 128, 128, 0.341), transparent);
+  z-index: 10;
+}
+.container .body section.gallery:nth-child(3) {
+  grid-template-areas: "left right";
+}
+.container .body section.gallery:nth-child(3) .desc {
+  grid-area: left;
+}
+.container .about {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 2rem;
+}
+.container .about h1 {
+  text-transform: uppercase;
+}
+.container .about p {
+  margin: 2rem 1rem;
+  font-size: 1rem;
+  text-transform: capitalize;
+}
+.container .about .links {
+  margin: 0rem 1rem;
+}
+.container .about .links a {
+  position: relative;
+  margin: 0rem 0.75rem;
+  color: white;
+  font-size: 2em;
+  transition: 0.5s;
+  display: inline-block;
+}
+.container .about .links a:nth-child(1) {
+  margin-left: 0;
+}
+.container .about .links a:hover {
+  transform: scale(1.5);
+}
+
+@media screen and (max-width: 1000px) {
+  .container .body section.main video {
+    transform: scale(1.5);
+  }
+  .container .body section.gallery {
+    grid-template-columns: 100%;
+  }
+  .container .body section.gallery .desc {
+    padding: 1rem;
+  }
+  .container .body section.gallery:nth-child(3) {
+    grid-template-areas: none;
+  }
+  .container .body section.gallery:nth-child(3) .desc {
+    grid-area: auto;
+  }
+  .container .nav-bar-open {
+    width: 100%;
+  }
+}
+@keyframes arrow-down {
+  50% {
+    top: 95%;
+  }
+  100% {
+    top: 90%;
+  }
+}/*# sourceMappingURL=master.css.map */
